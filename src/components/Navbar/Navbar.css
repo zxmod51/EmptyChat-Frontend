@@ -1,0 +1,12 @@
+.navbar {
+    height: 6%;
+}
+
+.navbarBrand {
+    width: 90%;
+}
+
+.navbar p {
+    color: white;
+    padding-top: 15px;
+}

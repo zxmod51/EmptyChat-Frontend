@@ -1,0 +1,60 @@
+.home {
+  height: 94%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  overflow: auto;
+}
+.two {
+  margin-top: 5px;
+  grid-column: 2 / 3;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 6px 6px;
+} 
+.inputPost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inputPost h2{
+  color: white;
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+.inputPost label {
+  margin-top: 15px;
+  color: rgb(255, 255, 255); 
+}
+.inputPost input {
+  width: 60%;  
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: rgb(33, 37, 41);
+  color: white;
+}
+.inputPost textarea {
+  width: 60%; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: rgb(33, 37, 41);
+  color: white;
+}
+.inputPost .postButton {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+.posts p { 
+  color: rgb(255, 255, 255);
+}
+.posts {
+  margin-bottom: 3px;
+}
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+}
+.posts .cardAuthor{
+  font-size: small;
+}
+.Posts .refreshIcon {
+  display: flex;
+  justify-content: flex-end;
+}

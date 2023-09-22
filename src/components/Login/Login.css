@@ -1,0 +1,34 @@
+.loginPage {
+    height: 94%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginWindow {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 6px 6px;
+  min-width: 30%;
+}
+.loginWindow label {
+  margin-top: 30px;
+  color: rgb(255, 255, 255);
+}
+.loginWindow input {
+  margin-top: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.loginWindow .loginButton {
+  margin-top: 15px;
+}
+.loginWindow p {
+  padding-top: 20px;
+  color: white;
+}
+
+.loginWindow a {
+  margin-bottom: 20px;
+}

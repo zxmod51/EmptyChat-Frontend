@@ -1,0 +1,39 @@
+.Sidebar {
+    float: left;
+    height: 94%;
+    width: 15%;
+    border: 1px solid black;
+    background-color: rgb(33, 37, 41);
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+.Sidebar :hover{
+    background-color: rgb(54, 54, 179);
+}
+
+.Sidebar li{
+    height: 50px;
+    border-bottom: 1px solid black;
+    list-style: none;
+    display: flex;
+}
+
+.Sidebar li div{
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+    .Sidebar li .title {
+        display: none !important;
+    }
+    .Sidebar li{
+        height: 50px;
+        border-bottom: 1px solid black;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+    }
+}

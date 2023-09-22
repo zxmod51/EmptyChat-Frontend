@@ -1,0 +1,30 @@
+.registerComponent {
+    height: 94%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.registerWindow {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 6px 6px;
+  }
+
+  .registerWindow label {
+    margin-top: 20px;
+    color: rgb(255, 255, 255);
+  }
+  .registerWindow input {
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .registerWindow .loginButton {
+    margin-top: 15px;
+  }
+  .registerWindow p {
+    padding-top: 20px;
+    color: white;
+  }
