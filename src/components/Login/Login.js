@@ -64,7 +64,7 @@ export default function Login() {
           <Button className="loginButton" variant="light" onClick={handleLoginRequest}>Login</Button>
 
           <p>Hast du noch keinen Account?</p>
-          <a href="/register">Registriere dich.</a>
+          <a href="/register">Registriere dich!</a>
         </div>
       </div>
     );
