@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode className="App">
+  <React.StrictMode className="Application">
     <BrowserRouter>
     <App />
     </BrowserRouter>
