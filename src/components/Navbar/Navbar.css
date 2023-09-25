@@ -8,5 +8,12 @@
 
 .navbar p {
     color: white;
-    padding-top: 15px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.navbar .profilePic {
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
 }

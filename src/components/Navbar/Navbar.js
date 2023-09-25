@@ -1,6 +1,7 @@
 import React, { useContext} from "react";
 import Navbar from 'react-bootstrap/Navbar';
 import logoImg from '../../assets/EmptyChatLogo1.png'
+import defaultProfileImage from '../../assets/DefaultProfileImage.png'
 import {AuthContext} from '../../App'
 import './Navbar.css';
 
@@ -20,7 +21,7 @@ export default function CustomNavbar({ username }) {
             EmptyChat
         </Navbar.Brand>
         {
-            (authContext.user.userData === undefined) ? <p></p> : <p>Willkommen {authContext.user.userData.username}!</p>
+            (authContext.user.userData === undefined) ? <p></p> : <><p>Willkommen {authContext.user.userData.username}!</p> <img src={defaultProfileImage} className="profilePic" alt="" width="40" height="40"/></>
         }
       </Navbar>
     );
