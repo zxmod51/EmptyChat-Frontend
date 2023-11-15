@@ -5,6 +5,7 @@ import Register from './components/Register/Register.js';
 import CustomNavbar from './components/Navbar/Navbar.js';
 import Sidebar from './components/Sidebar/Sidebar.js';
 import Home from './pages/Home/Home.js';
+import Profile from './pages/profile/Profile.js';
 import './App.css';
 
 export const AuthContext = createContext();
@@ -14,17 +15,17 @@ function App() {
   return (
     <div className="App"> 
     <AuthProvider>
-    <CustomNavbar/>
-    <Sidebar />
-    <Routes>
-      <Route path="/" element={<Navigate to="/login" replace />}/>
-      <Route path="/login" element={<Login />}/>
-      <Route path="/register" element={<Register/>}/>
-      <Route path="/home" element={<RequireAuth><Home /></RequireAuth>}/>
-      <Route path="/profile" element={<RequireAuth><h1>Profile</h1></RequireAuth>}/>
-      <Route path="/mailbox" element={<RequireAuth><h1>Mailbox</h1></RequireAuth>}/>
-      <Route path="/settings" element={<RequireAuth><h1>Settings</h1></RequireAuth>}/>
-    </Routes>
+      <CustomNavbar/>
+      <Sidebar />
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" replace />}/>
+        <Route path="/login" element={<Login />}/>
+        <Route path="/register" element={<Register/>}/>
+        <Route path="/home" element={<RequireAuth><Home /></RequireAuth>}/>
+        <Route path="/profile" element={<RequireAuth><Profile /></RequireAuth>}/>
+        <Route path="/mailbox" element={<RequireAuth><h1>Mailbox</h1></RequireAuth>}/>
+        <Route path="/settings" element={<RequireAuth><h1>Settings</h1></RequireAuth>}/>
+      </Routes>
     </AuthProvider>
     </div>
   );
@@ -50,10 +51,14 @@ function RequireAuth({ children }) {
 
 export function AuthProvider({ children }) {
   let [user, setUser] = useState({auth:false, user: {}});
+  let [pathAvatar, setPathAvatar] = useState("");
 
   let signin = (data) => {
-    setUser({auth:data.auth, userData:data.user});}
-  let value = { user, signin };
+    setUser({auth:data.auth, userData:data.user});
+    setPathAvatar(data.user.pathToAvatar);
+  }
+  
+  let value = { user, signin, pathAvatar, setPathAvatar };
   
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

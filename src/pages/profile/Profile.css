@@ -1,0 +1,59 @@
+.profilePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 94%;
+}
+
+.profile {
+    box-shadow: 6px 6px;
+    background-color: rgb(33, 37, 41);
+    border: 1px solid black;
+    height: 95%;
+    min-width: 50%
+}
+
+.profile .header {
+    height: 20%;
+}
+
+.profile .header img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.profile .main {
+    color: white;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.profile .main .profileImage {
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.myButton {
+    align-self: center;
+    border: 2px solid black;
+    background-color: white;
+    color: rgb(33, 37, 41);
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.profile .main .userInfo {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.profile .posts {
+    color: white;
+}
