@@ -32,3 +32,15 @@
 .loginWindow a {
   margin-bottom: 20px;
 }
+
+@media screen and (max-width: 900px) {
+    
+  .loginPage {
+      width: 100%;
+      height: 88%;
+  }
+
+  .loginWindow {
+      width: 95%;
+  }
+}
