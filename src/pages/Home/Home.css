@@ -5,7 +5,7 @@
   overflow: auto;
 }
 .two {
-  margin-top: 5px;
+  margin-top: 10px;
   grid-column: 2 / 3;
   border: 1px solid rgb(0, 0, 0);
   box-shadow: 6px 6px;
@@ -57,4 +57,12 @@
 .Posts .refreshIcon {
   display: flex;
   justify-content: flex-end;
+}
+
+@media screen and (max-width: 900px) {
+  .home {
+      width: 100%;
+      height: 85%;
+      grid-template-columns: 15px auto 15px;
+  }
 }

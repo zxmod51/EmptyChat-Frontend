@@ -57,3 +57,29 @@
 .profile .posts {
     color: white;
 }
+
+@media screen and (max-width: 900px) {
+    
+    .profilePage {
+        width: 100%;
+        height: 88%;
+    }
+
+    .profile {
+        width: 95%;
+    }
+
+    .profile .main .profileImage img{
+        height: auto; 
+        width: auto; 
+        max-width: 100px; 
+        max-height: 100px;
+    }
+
+    .myButton {
+        height: auto; 
+        width: auto; 
+        max-width: 50px; 
+        max-height: 50px;
+    }
+}

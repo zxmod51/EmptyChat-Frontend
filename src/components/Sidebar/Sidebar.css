@@ -15,25 +15,30 @@
 .Sidebar li{
     height: 50px;
     border-bottom: 1px solid black;
-    list-style: none;
     display: flex;
+    align-items: center;
 }
 
-.Sidebar li div{
-    display: inline-block;
-    vertical-align: middle;
-    padding-top: 10px;
-}
+@media screen and (max-width: 900px) {
+    .Sidebar {
+        flex-direction: row;
+        height: 6%;
+        width: 100%;
+    }
 
-@media screen and (max-width: 1024px) {
     .Sidebar li .title {
         display: none !important;
     }
+    
     .Sidebar li{
-        height: 50px;
-        border-bottom: 1px solid black;
-        list-style: none;
-        display: flex;
+        width: 25%;
+        height: 100%;
+        border-left: 1px solid black;
+        border-bottom: 0px;
         justify-content: center;
+    }
+
+    .Sidebar li:last-of-type{
+        border-right: 1px solid black;
     }
 }
