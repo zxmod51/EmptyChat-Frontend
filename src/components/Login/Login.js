@@ -13,6 +13,17 @@ export default function Login() {
     const [showToast, setShowToast] = useState(false);
     const [toastProps, setToastProps] = useState({})
     const navigate = useNavigate();
+    const guestLoginData = {
+      auth: true,
+      user: {      
+        _id: "6556221871a21a2c62cba900",
+        name: "Guest",
+        email: "Guest@guest.com",
+        username: "Guest",
+        isAdmin: false,
+        pathToAvatar: "",
+      }
+    }
 
     const  handleLoginRequest = () => {
         var requestData = {
@@ -40,7 +51,12 @@ export default function Login() {
               setShowToast(true);
             })
           }     
-      })};
+    })};
+
+    const  handleGuestLogin= () => {
+      auth.signin(guestLoginData);
+      navigate("/home")
+    }
 
     return (
       <div className="loginPage">
@@ -65,6 +81,7 @@ export default function Login() {
 
           <p>Hast du noch keinen Account?</p>
           <a href="/register">Registriere dich!</a>
+          <Button className="guestloginButton" variant="primary" onClick={handleGuestLogin}>Login as guest</Button>
         </div>
       </div>
     );
