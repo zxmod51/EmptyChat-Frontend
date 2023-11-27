@@ -13,17 +13,6 @@ export default function Login() {
     const [showToast, setShowToast] = useState(false);
     const [toastProps, setToastProps] = useState({})
     const navigate = useNavigate();
-    const guestLoginData = {
-      auth: true,
-      user: {      
-        _id: "6556221871a21a2c62cba900",
-        name: "Guest",
-        email: "Guest@guest.com",
-        username: "Guest",
-        isAdmin: false,
-        pathToAvatar: "",
-      }
-    }
 
     const  handleLoginRequest = () => {
         var requestData = {
@@ -54,9 +43,32 @@ export default function Login() {
     })};
 
     const  handleGuestLogin= () => {
-      auth.signin(guestLoginData);
-      navigate("/home")
-    }
+      var requestData = {
+          username: "Guest", 
+          password: "Guest"
+        }
+      const requestOptions = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: "include",
+          body: JSON.stringify(requestData)
+      };
+      fetch(`${process.env.REACT_APP_BASE_URL}/login`, requestOptions)
+      .then(response => {
+        if (response.ok) {
+          response.json()
+          .then(data => {
+            auth.signin(data);
+            navigate("/home")
+        });
+        } else {
+          response.text()
+          .then(data => {
+            setToastProps({header: "Oops. Etwas ist schiefgelaufen!", body: data})
+            setShowToast(true);
+          })
+        }     
+  })};
 
     return (
       <div className="loginPage">
