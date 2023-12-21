@@ -1,14 +1,13 @@
 .home {
   height: 94%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   overflow: auto;
 }
-.two {
+.homeComponent {
   margin-top: 10px;
-  grid-column: 2 / 3;
   border: 1px solid rgb(0, 0, 0);
   box-shadow: 6px 6px;
+  width: 40%;
+  margin: 5px auto;
 } 
 .inputPost {
   display: flex;
@@ -50,6 +49,17 @@
 .cardHeader {
   display: flex;
   justify-content: space-between;
+}
+.cardFooter {
+  display: flex;
+  justify-content: right;
+  font-size: small;
+}
+.cardFooterButton:hover{
+  cursor: pointer;
+}
+.deleteButton {
+  color: rgb(216, 22, 22);
 }
 .posts .cardAuthor{
   font-size: small;

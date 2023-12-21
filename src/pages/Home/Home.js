@@ -8,7 +8,7 @@ import {AuthContext} from '../../App'
 export default function Home() {
     return (
       <div className="home">
-        <div className="two">
+        <div className="homeComponent">
           <InputFieldPosts />
           <Posts />
         </div>
@@ -17,6 +17,7 @@ export default function Home() {
   }
 
   function Posts() {
+    const auth = useContext(AuthContext);
     const [postItems, setPostItems] = useState([]);
 
     useEffect( () => {
@@ -44,6 +45,27 @@ export default function Home() {
         }     
     })};
 
+    const handleDeletePost = (postId) => {
+      var postData = {
+          _id: postId
+        }
+      const requestOptions = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: "include",
+          body: JSON.stringify(postData)
+      };
+      fetch(`${process.env.REACT_APP_BASE_URL}/deletePost`, requestOptions)
+      .then(response => {
+        if (response.ok) {
+          getPosts()
+        } else {
+          response.text()
+          .then(data => {
+          })
+        }     
+    })};
+
 
     return (
       <div className="Posts">
@@ -53,15 +75,24 @@ export default function Home() {
       { postItems.map((item, key) => 
       <div key={key} className="posts">
         <Card bg="dark" data-bs-theme="dark">
+          <Card.Header className="cardHeader">
+            <div className="cardTitle"><b>{item.title}</b></div>
+            <div className="cardAuthor">Author: {item.author.username}</div>
+          </Card.Header>
           <Card.Body>
-            <Card.Title className="cardHeader">
-              <div className="cardTitle"><b>{item.title}</b></div>
-              <div className="cardAuthor">Author: {item.author.username}</div>
-            </Card.Title>
             <Card.Text>
               {item.body}
             </Card.Text>
           </Card.Body>
+          {
+            (item.author.username === auth.user.userData.username)
+            ? <>
+              <Card.Body className="cardFooter">
+                <a className="cardFooterButton deleteButton" onClick={() => handleDeletePost(item._id)}>Delete</a>
+              </Card.Body></>
+            : <>
+              </>
+          }
         </Card>
       </div>
     ) } </div>)
